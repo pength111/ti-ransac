@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use TI-RANSAC in your research, please cite the paper below."
+title: "TI-RANSAC: Topology-Aware Instance Segmentation for Semi-Automatic Rock Discontinuity Annotation from 3D Point Clouds"
+type: article
+journal: "Computers & Geosciences"
+year: 2026
+authors:
+  - given-names: Author 1
+  - given-names: Author 2
+  - given-names: Author 3
+keywords:
+  - "3D point cloud"
+  - "Rock discontinuity"
+  - "Instance segmentation"
+  - "Topological constraints"
+  - "RANSAC"
+  - "Semi-automatic annotation"
+repository-code: "https://github.com/<your-username>/ti-ransac"
+license: MIT

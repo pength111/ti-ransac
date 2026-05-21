@@ -1,0 +1,55 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Virtual environments
+venv/
+.env
+.venv
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Output files
+labeled_point_cloud.csv
+planes_summary.csv
+visualization.html
+*.html
+
+# Large data files (use Git LFS or external data repository)
+*.txt
+!requirements.txt
+*.xyz
+*.las
+*.laz
+*.pcd
+*.ply
+
+# OS
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Manuscript (not part of the code repository)
+*.tex
+*.pdf
+
+# Backup
+*.bak
+*.orig
