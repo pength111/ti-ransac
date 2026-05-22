@@ -140,7 +140,7 @@ def main():
     base_dir = os.path.dirname(os.path.abspath(__file__))
     output_labeled = os.path.join(base_dir, "labeled_point_cloud.csv")
     output_summary = os.path.join(base_dir, "planes_summary.csv")
-    output_viz = os.path.join(base_dir, "visualization.html")
+    output_viz = os.path.join(base_dir, "segmentation_result.ply")
 
     save_labeled_point_cloud(points_down, labels, output_labeled)
     export_planes_summary(planes, output_summary)

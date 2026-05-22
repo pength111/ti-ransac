@@ -78,48 +78,50 @@ def export_planes_summary(planes, output_file):
     print(f"Plane summary saved: {output_file}")
 
 
-def visualize_results(points, labels, planes, output_path="visualization.html"):
+def visualize_results(points, labels, planes, output_path=None):
     """
-    Create interactive 3D visualization using Plotly.
+    Visualize labeled point cloud using Open3D.
+
+    Opens an interactive 3D window with per-instance coloring. If output_path
+    is provided, also saves the colored point cloud as a PLY file.
 
     Args:
         points: Nx3 point cloud array
-        labels: length-N label array
+        labels: length-N label array (-1 = unassigned, shown in gray)
         planes: list of discontinuity instance dicts
-        output_path: output HTML file path
+        output_path: optional path to save colored PLY file
     """
     try:
-        import plotly.graph_objects as go
+        import open3d as o3d
     except ImportError:
-        print("Warning: plotly not installed, skipping visualization")
+        print("Warning: open3d not installed, skipping visualization")
         return
 
-    colors = []
-    for label in labels:
+    # Generate per-point colors (golden angle for distinct hues)
+    colors = np.zeros((len(points), 3))
+    golden_angle = 137.508
+    for label in np.unique(labels):
         if label == -1:
-            colors.append('gray')
+            colors[labels == label] = [0.5, 0.5, 0.5]  # gray for unassigned
         else:
-            hue = (label * 137.508) % 360
-            colors.append(f'hsl({hue}, 70%, 50%)')
+            import colorsys
+            hue = (label * golden_angle) % 360 / 360.0
+            rgb = colorsys.hsv_to_rgb(hue, 0.7, 0.9)
+            colors[labels == label] = rgb
 
-    fig = go.Figure(data=[
-        go.Scatter3d(
-            x=points[:, 0], y=points[:, 1], z=points[:, 2],
-            mode='markers',
-            marker=dict(size=2, color=colors, opacity=0.8),
-            text=[f'Label: {label}' for label in labels],
-            hoverinfo='text'
-        )
-    ])
+    # Build Open3D point cloud
+    pcd = o3d.geometry.PointCloud()
+    pcd.points = o3d.utility.Vector3dVector(points)
+    pcd.colors = o3d.utility.Vector3dVector(colors)
 
-    fig.update_layout(
-        title=f'TI-RANSAC Discontinuity Extraction ({len(planes)} instances)',
-        scene=dict(
-            xaxis_title='X', yaxis_title='Y', zaxis_title='Z',
-            aspectmode='data'
-        ),
-        showlegend=False
+    if output_path:
+        o3d.io.write_point_cloud(output_path, pcd)
+        print(f"Colored point cloud saved: {output_path}")
+
+    print(f"Visualizing {len(planes)} instances ({len(points)} points)...")
+    o3d.visualization.draw_geometries(
+        [pcd],
+        window_name=f"TI-RANSAC: {len(planes)} instances",
+        width=1280, height=960,
+        point_show_normal=False
     )
-
-    fig.write_html(output_path)
-    print(f"Visualization saved: {output_path}")

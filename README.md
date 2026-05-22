@@ -24,7 +24,7 @@ pip install -r requirements.txt
 - NumPy ≥ 1.20
 - SciPy ≥ 1.7
 - scikit-learn ≥ 1.0
-- Plotly ≥ 5.0 (optional, for 3D visualization)
+- Open3D ≥ 0.15 (for 3D visualization)
 
 ### Hardware Requirements
 
@@ -112,7 +112,7 @@ for plane in planes:
 
 - `labeled_point_cloud.csv` — Point cloud with per-point instance labels
 - `planes_summary.csv` — Per-instance parameters (ID, point count, plane equation, dip direction, dip angle, RMSE)
-- `visualization.html` — Interactive 3D visualization (requires Plotly)
+- `segmentation_result.ply` — Colored point cloud with per-instance labels (optional, Open3D)
 
 ## Key Parameters
 
