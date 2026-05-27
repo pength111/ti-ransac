@@ -15,5 +15,5 @@ keywords:
   - "Topological constraints"
   - "RANSAC"
   - "Semi-automatic annotation"
-repository-code: "https://github.com/<your-username>/ti-ransac"
+repository-code: "https://github.com/pength111/ti-ransac.git"
 license: MIT

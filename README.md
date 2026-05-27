@@ -13,7 +13,7 @@ TI-RANSAC extends standard RANSAC with four collaborative mechanisms to resolve 
 ## Installation
 
 ```bash
-git clone https://github.com/<your-username>/ti-ransac.git
+git clone https://github.com/pength111/ti-ransac.git
 cd ti-ransac
 pip install -r requirements.txt
 ```
