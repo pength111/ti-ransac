@@ -1,7 +1,14 @@
-# TI-RANSAC: Topology-Aware Instance Segmentation for Semi-Automatic Rock Discontinuity Annotation from 3D Point Clouds
+# TI-RANSAC: Topology-Aware Instance Segmentation for semi-automatic rock discontinuity annotation from 3D point clouds
 
+[![DOI](https://img.shields.io/badge/DOI-10.1016%2Fj.cageo.2026.106279-blue.svg)](https://doi.org/10.1016/j.cageo.2026.106279)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.8+](https://img.shields.io/badge/Python-3.8%2B-green.svg)](https://www.python.org/)
+
+Published in **Computers & Geosciences** (2026), Article 106279 — [10.1016/j.cageo.2026.106279](https://doi.org/10.1016/j.cageo.2026.106279)
+
+<p align="center">
+  <b>Yu Peng · Xiaodong Wang · Huaichang Yu · Huijuan Feng · Junyi Chen</b>
+</p>
 
 TI-RANSAC extends standard RANSAC with four collaborative mechanisms to resolve the "infinite plane" and "false plane" artifacts in automated rock discontinuity segmentation from 3D point clouds:
 
@@ -126,6 +133,8 @@ for plane in planes:
 
 ## Reproducing Paper Results
 
+All experiments below correspond to the published article: Peng, Y., Wang, X., Yu, H., Feng, H., & Chen, J. (2026). *TI-RANSAC: Topology-Aware Instance Segmentation for semi-automatic rock discontinuity annotation from 3D point clouds*. Computers & Geosciences, 106279. [https://doi.org/10.1016/j.cageo.2026.106279](https://doi.org/10.1016/j.cageo.2026.106279)
+
 ### Synthetic Dodecahedron Benchmark (Section 3.1)
 
 The script `ransac_discontinuity_detection.py` generates a regular dodecahedron with 1.2M points and Gaussian noise (σ = 0.01 m). Running the `__main__` block directly reproduces the geometric accuracy experiment from Table 2.
@@ -143,11 +152,13 @@ This project is licensed under the MIT License — see the [LICENSE](LICENSE) fi
 If you use TI-RANSAC in your research, please cite:
 
 ```bibtex
-@article{ti-ransac,
-  title     = {TI-RANSAC: Topology-Aware Instance Segmentation for Semi-Automatic Rock Discontinuity Annotation from 3D Point Clouds},
-  journal   = {Computers & Geosciences},
-  year      = {2026},
-  author    = {Author 1 and Author 2 and Author 3}
+@article{Peng2026TIRANSAC,
+  title   = {TI-RANSAC: Topology-Aware Instance Segmentation for semi-automatic rock discontinuity annotation from 3D point clouds},
+  author  = {Peng, Yu and Wang, Xiaodong and Yu, Huaichang and Feng, Huijuan and Chen, Junyi},
+  journal = {Computers \& Geosciences},
+  year    = {2026},
+  pages   = {106279},
+  doi     = {10.1016/j.cageo.2026.106279}
 }
 ```
 

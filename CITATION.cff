@@ -1,13 +1,26 @@
 cff-version: 1.2.0
 message: "If you use TI-RANSAC in your research, please cite the paper below."
-title: "TI-RANSAC: Topology-Aware Instance Segmentation for Semi-Automatic Rock Discontinuity Annotation from 3D Point Clouds"
+title: "TI-RANSAC: Topology-Aware Instance Segmentation for semi-automatic rock discontinuity annotation from 3D point clouds"
 type: article
+authors:
+  - family-names: Peng
+    given-names: Yu
+  - family-names: Wang
+    given-names: Xiaodong
+  - family-names: Yu
+    given-names: Huaichang
+  - family-names: Feng
+    given-names: Huijuan
+  - family-names: Chen
+    given-names: Junyi
 journal: "Computers & Geosciences"
 year: 2026
-authors:
-  - given-names: Author 1
-  - given-names: Author 2
-  - given-names: Author 3
+date-released: 2026-10-01
+doi: 10.1016/j.cageo.2026.106279
+identifiers:
+  - type: doi
+    value: 10.1016/j.cageo.2026.106279
+    description: "Published article (Computers & Geosciences, Article 106279)"
 keywords:
   - "3D point cloud"
   - "Rock discontinuity"
