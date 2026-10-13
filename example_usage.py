@@ -64,7 +64,8 @@ def main():
     print("=" * 70)
 
     # ---- Parameters ----
-    # Point to your input file here
+    # Point to your input file here. If the file does not exist, a synthetic
+    # test point cloud is generated at this path instead.
     input_file = r"your_point_cloud.txt"
 
     params = {
